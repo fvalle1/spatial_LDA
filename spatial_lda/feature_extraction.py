@@ -513,7 +513,7 @@ def create_feature_matrix_sift():
 
 
 def make_dataset_directory(dataset_filepath):
-    BOX_DATA_ROOT = "/home/jovyan/work/dataset/ADE20K_2021_17_01/images/ADE/training"
+    BOX_DATA_ROOT = "dataset/ADE20K_2021_17_01/images/ADE/training"
     grayscaleDataset = ADE20K(grayscale=True, root=BOX_DATA_ROOT,
                               transform=None, useStringLabels=True,
                               randomSeed=49)

@@ -17,19 +17,19 @@ from configuration import box_data_root
 
 # Get file paths and directories
 data_root = os.path.join(os.path.dirname(__file__), '../data')
-train_root = "/home/jovyan/work/spatial_LDA/data/cropped_test_0/m"
-test_root = "/home/jovyan/work/spatial_LDA/data/cropped_test_0/m"
-hierarchy_json_path = "/home/jovyan/work/spatial_LDA/data" \
+train_root = "data/cropped_test_0/m"
+test_root = "data/cropped_test_0/m"
+hierarchy_json_path = "data" \
                       "/bbox_labels_600_hierarchy.json"
 path_to_csv = "/home/yaatehr/programs/datasets/google_open_image/train" \
               "-annotations-bbox.csv"
 path_to_classname_map_csv = os.path.join(data_root, 'class-descriptions.csv')
 
 # NOTE: if you are using on a new box, you will want to add your data root in "configuration.py"
-YAATEH_DATA_ROOT = "/home/jovyan/work/spatial_LDA/dataset/ADE20K_2021_17_01/images/ADE/" \
+YAATEH_DATA_ROOT = "dataset/ADE20K_2021_17_01/images/ADE/" \
                    "/training"
 BOX_DATA_ROOT = box_data_root
-DSAIL_BOX_DATA_ROOT = "/home/jovyan/work/spatial_LDA/dataset/ADE20K_2021_17_01/images/ADE/training"
+DSAIL_BOX_DATA_ROOT = "dataset/ADE20K_2021_17_01/images/ADE/training"
 
 
 def getDataRoot():
