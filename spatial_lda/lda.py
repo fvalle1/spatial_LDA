@@ -331,7 +331,7 @@ def evaluate_dataset_sift():
 def find_baseline_kl(n_keypoints, n_clusters, n_topics, val=False):
     print(
         "finding baseline for %s, %s, %s" % (n_keypoints, n_clusters, n_topics))
-    data_dir = "/home/yaatehr/programs/spatial_LDA/data/top25_sift/"
+    data_dir = "data/top25_sift/"
     if not val:
         path = os.path.join(data_dir,
                             "prob_distrs_%s_topics_%s_keypoints_%s_clusters"
@@ -364,7 +364,7 @@ def evaluate_main(cnn_mode=False):
     # labels = ["06c54", "011k07", "099ssp"] #labels in descriptors_test_1
     m_dir = "/home/yaatehr/programs/datasets/seg_data/images/dataset1/"  #
     # labels
-    data_dir = '/home/yaatehr/programs/spatial_LDA/data/'
+    data_dir = 'data/'
     if cnn_mode:
         data_dir = getDirPrefix()
     actual_dic = {}
@@ -451,9 +451,9 @@ def evaluate_main(cnn_mode=False):
 
 def main():
     # TODO: FILL IN feature_path
-    dataset_path = "/home/yaatehr/programs/datasets/seg_data/images/dataset1/"
+    dataset_path = "/home/jovyan/work/phd/spatial_SBM/spatial_LDA/dataset/ADE20K_2021_17_01/images/ADE/"
     # feature_extraction.make_dataset_directory(dataset_path)
-    sift_feature_path = "/home/yaatehr/programs/spatial_LDA/data" \
+    sift_feature_path = "data" \
                         "/sift_feature_matrix_%s_keypoints_%s_clusters" % (
     n_keypoints, n_clusters)
     M, kmeans = feature_extraction.create_feature_matrix(dataset_path)
@@ -465,8 +465,8 @@ def main():
     with open(sift_feature_path, "rb") as f:
         M = pickle.load(f)
     # CnnM = feature_extraction.create_feature_matrix_cnn(dataset_path)
-    # feature_path = "/home/yaatehr/programs/spatial_LDA/data/features1.pkl"
-    # feature_path = "/home/yaatehr/programs/spatial_LDA/data
+    # feature_path = "data/features1.pkl"
+    # feature_path = "data
     # /cnn_feature_matrix"
     # with open(feature_path, "rb") as f:
     # CnnM = pickle.load(f)
@@ -474,17 +474,17 @@ def main():
     lda_model = lda.off_the_shelf_LDA()  # Fit the sklearn LDA model
     predicted = {}
     img_files = os.listdir(dataset_path)
-    descriptor_path = "/home/yaatehr/programs/spatial_LDA/data" \
+    descriptor_path = "data" \
                       "/image_descriptors_dictionary_%s_keypoints.pkl" % \
                       n_keypoints
-    # with open ("/home/yaatehr/programs/spatial_LDA/data
+    # with open ("data
     # /img_descriptors_dic1.pkl", "rb") as f:
     with open(descriptor_path, "rb") as f:
         descriptor_dic = pickle.load(f)
     predicted_cluster = {}  # dictionary of imgid: cluster
     cluster_dic = {}  # ictionary of cluster: [images in cluster]
     prob_distr_dic = {}  # maps id: probability distribution over clusters
-    kmeans_path = "/home/yaatehr/programs/spatial_LDA/data/kmeans_" \
+    kmeans_path = "data/kmeans_" \
                   "%s_clusters_%s_keypoints.pkl" % (
     n_clusters, n_keypoints)
 
@@ -520,17 +520,17 @@ def main():
                     cluster_dic[predicted_class] = [f]
                 num_files += 1
     with open(
-            "/home/yaatehr/programs/spatial_LDA/data/predicted_%s_topics_"
+            "data/predicted_%s_topics_"
             "%s_keypoints_%s_clusters.pkl" % (
             n_topics, n_keypoints, n_clusters), "wb") as f:
         pickle.dump(predicted_cluster, f)
     with open(
-            "/home/yaatehr/programs/spatial_LDA/data/clustered_images_"
+            "data/clustered_images_"
             "%s_topics_%s_keypoints_%s_clusters.pkl" % (
             n_topics, n_keypoints, n_clusters), "wb") as f:
         pickle.dump(cluster_dic, f)
     with open(
-            "/home/yaatehr/programs/spatial_LDA/data/prob_distrs_%s_topics_"
+            "data/prob_distrs_%s_topics_"
             "%s_keypoints_%s_clusters.pkl" % (
             n_topics, n_keypoints, n_clusters), "wb") as f:
         pickle.dump(prob_distr_dic, f)
@@ -720,10 +720,9 @@ def ryan_test():
 if __name__ == "__main__":
     # main()
     # build_cnn_predictions()
-    build_cnn_predictions()
-    # build_sift_predictions()
+    build_sift_predictions()
     # evaluate_dataset_sift()
     # evaluate_dataset_cnn()
     # main()
     # evaluate_main()
-    find_baseline_kl(*sys.argv[1:])
+    # find_baseline_kl(n_keypoints = 100, n_clusters = 100, n_topics = 10)

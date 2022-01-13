@@ -26,10 +26,10 @@ path_to_csv = "/home/yaatehr/programs/datasets/google_open_image/train" \
 path_to_classname_map_csv = os.path.join(data_root, 'class-descriptions.csv')
 
 # NOTE: if you are using on a new box, you will want to add your data root in "configuration.py"
-YAATEH_DATA_ROOT = "/Users/yaatehr/Programs/spatial_LDA/data/seg_data/images" \
+YAATEH_DATA_ROOT = "/home/jovyan/work/phd/spatial_SBM/spatial_LDA/dataset/ADE20K_2021_17_01/images/ADE/" \
                    "/training"
 BOX_DATA_ROOT = box_data_root
-DSAIL_BOX_DATA_ROOT = "/home/ubuntu/hdd2/datasets/seg_data/images/training"
+DSAIL_BOX_DATA_ROOT = "/home/jovyan/work/phd/spatial_SBM/spatial_LDA/dataset/ADE20K_2021_17_01/images/ADE/training"
 
 
 def getDataRoot():

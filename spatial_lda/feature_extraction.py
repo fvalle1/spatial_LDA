@@ -245,7 +245,7 @@ def create_feature_matrix(img_path, n_clusters=n_clusters):
     # Make clustering algorithm
     kmeans = KMeans(n_clusters=n_clusters)
     img_files = os.listdir(img_path)  # img_file should be
-    descriptor_path = "/home/yaatehr/programs/spatial_LDA/data" \
+    descriptor_path = "data" \
                       "/image_descriptors_dictionary_%s_keypoints.pkl" % \
                       n_keypoints
     print(descriptor_path)
@@ -280,7 +280,7 @@ def create_feature_matrix(img_path, n_clusters=n_clusters):
                         i is not None and i.shape[0] == n_keypoints])
     print(vstack.shape)
     kmeans.fit(vstack)
-    kmeans_path = "/home/yaatehr/programs/spatial_LDA/data/kmeans_" \
+    kmeans_path = "data/kmeans_" \
                   "%s_clusters_%s_keypoints.pkl" % (n_clusters, n_keypoints)
     with open(kmeans_path, "wb") as f:
         pickle.dump(kmeans, f)
@@ -513,7 +513,7 @@ def create_feature_matrix_sift():
 
 
 def make_dataset_directory(dataset_filepath):
-    BOX_DATA_ROOT = "/home/yaatehr/programs/datasets/seg_data/images/training"
+    BOX_DATA_ROOT = "/home/jovyan/work/phd/spatial_SBM/spatial_LDA/dataset/ADE20K_2021_17_01/images/ADE/training"
     grayscaleDataset = ADE20K(grayscale=True, root=BOX_DATA_ROOT,
                               transform=None, useStringLabels=True,
                               randomSeed=49)
@@ -543,13 +543,13 @@ def make_dataset_directory(dataset_filepath):
 
 
 def main():
-    dataset_path = "/home/yaatehr/programs/spatial_LDA/data/descriptors_test_1"
+    dataset_path = "data/descriptors_test_1"
     """
     M = create_feature_matrix(dataset_npath)
     model = get_model()
     CnnMatrix = create_feature_matrix_cnn(dataset_path, model)
 
-    with open("/home/yaatehr/programs/spatial_LDA/data/cnn_feature_matrix",
+    with open("data/cnn_feature_matrix",
                "wb") as f:
          pickle.dump(CnnMatrix, f)
     """
