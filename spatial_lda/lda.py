@@ -451,7 +451,7 @@ def evaluate_main(cnn_mode=False):
 
 def main():
     # TODO: FILL IN feature_path
-    dataset_path = "/home/jovyan/work/phd/spatial_SBM/spatial_LDA/dataset/ADE20K_2021_17_01/images/ADE/"
+    dataset_path = "/home/jovyan/work/spatial_LDA/dataset/ADE20K_2021_17_01/images/ADE/"
     # feature_extraction.make_dataset_directory(dataset_path)
     sift_feature_path = "data" \
                         "/sift_feature_matrix_%s_keypoints_%s_clusters" % (
