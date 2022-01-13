@@ -17,9 +17,9 @@ from configuration import box_data_root
 
 # Get file paths and directories
 data_root = os.path.join(os.path.dirname(__file__), '../data')
-train_root = "/home/yaatehr/programs/spatial_LDA/data/cropped_test_0/m"
-test_root = "/home/yaatehr/programs/spatial_LDA/data/cropped_test_0/m"
-hierarchy_json_path = "/home/yaatehr/programs/spatial_LDA/data" \
+train_root = "/home/jovyan/work/spatial_LDA/data/cropped_test_0/m"
+test_root = "/home/jovyan/work/spatial_LDA/data/cropped_test_0/m"
+hierarchy_json_path = "/home/jovyan/work/spatial_LDA/data" \
                       "/bbox_labels_600_hierarchy.json"
 path_to_csv = "/home/yaatehr/programs/datasets/google_open_image/train" \
               "-annotations-bbox.csv"

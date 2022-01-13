@@ -34,7 +34,7 @@ def get_model():
 
 def get_feature_vector(img):
     # Get keypoints and feature descriptors
-    sift = cv.SIFT_create(n_keypoints)
+    sift = cv.xfeatures2d.SIFT_create(n_keypoints)
     kp, des = sift.detectAndCompute(img, None)
     return kp, des
 
